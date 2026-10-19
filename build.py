@@ -58,7 +58,7 @@ def layout(title, body, *, desc, path, section="", og_type="website"):
   <div>
     <a class="brand" href="/">{LOGO}<span>b32n</span></a>
     <p class="motto">Take back control of your data.</p>
-    <p style="color:var(--ink-2);max-width:38ch;margin:0">Open tools, made approachable. A small studio by Bharat Nadkarni.</p>
+    <p style="color:var(--ink-2);max-width:38ch;margin:0">Making open source approachable. Open tools built by Bharat Nadkarni.</p>
   </div>
   <div><h4>Projects</h4><ul>
     <li><a href="/projects/spindle/">Spindle</a></li>

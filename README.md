@@ -1,6 +1,6 @@
 # b32n.io
 
-Source for **https://b32n.io**, the home of b32n: open tools, made approachable, by Bharat Nadkarni.
+Source for **https://b32n.io**, Bharat Nadkarni's home on the web, where I build open tools and make open source approachable.
 
 *Take back control of your data.*
 
