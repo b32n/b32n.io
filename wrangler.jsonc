@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "b32n-io",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  },
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "b32n.io/*", "zone_name": "b32n.io" }
+  ],
+  "observability": { "enabled": false }
+}

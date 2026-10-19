@@ -1,0 +1,40 @@
+title: Spindle case study
+description: Why Spindle exists, how it's built, and where it's going. Forever-free spreadsheet, docs and slides editors for React.
+path: /projects/spindle/
+section: projects
+---
+<section class="page-hero" data-swarm-host><canvas class="swarm" data-shapes="grid" data-count="700" aria-hidden="true"></canvas><div class="wrap">
+  <div class="crumbs"><a href="/#projects">Projects</a> / Spindle</div>
+  <h1>Spindle</h1>
+  <p class="lede">The full editing experience of a commercial office suite, as forever-free React libraries you own.</p>
+  <div class="facts"><span class="pill">MIT licence</span><span class="pill">React + TypeScript</span><span class="pill">Sheets · Docs · Slides</span><span class="pill">Yjs collaboration</span></div>
+  <p class="ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn primary" href="https://spindle.b32n.io" target="_blank" rel="noopener">Open Spindle <span class="arrow">↗</span></a><a class="btn" href="https://github.com/b32n/spindle">Source on GitHub <span class="arrow">↗</span></a></p>
+</div></section>
+<section style="padding-top:24px"><div class="wrap split">
+<article class="prose">
+  <h2>The problem</h2>
+  <p>For years I wanted an encrypted drive of my own: somewhere to keep spreadsheets, documents and decks without handing them to someone else's cloud. When I finally started building it, I hit a wall. There was no open source library that offered full-featured editors for all three.</p>
+  <p>What existed was either heavy and bloated, covered only one document type, or came with proprietary or mixed licensing. Every path led back to renting your editor from somebody else.</p>
+  <blockquote>If the editor isn't yours, the document isn't really yours either.</blockquote>
+  <h2>What Spindle is</h2>
+  <p>Spindle is a set of React libraries for spreadsheets, documents and slides. You drop an editor into your app, hand it JSON, and get JSON back. Where that JSON goes is your call.</p>
+  <ul>
+    <li><strong>Sheets:</strong> virtual scrolling, keyboard navigation, a formula engine with 146 functions, dynamic arrays and topological recalculation, and sparse storage that only keeps non-empty cells.</li>
+    <li><strong>Docs:</strong> true page layout with line-level pagination, rich text, headers and footers with dynamic fields, tables, images and undo history.</li>
+    <li><strong>Slides:</strong> text, shapes, images, connectors and tables, 60fps drag, resize and rotate with smart guides, themes, layouts and a presenter view.</li>
+  </ul>
+  <h2>How it's built</h2>
+  <p>Each editor is split into a <code>core</code> package (the engine and data model) and a <code>react</code> package (the UI). Rendering is canvas-first, which keeps large sheets fast and bundles small.</p>
+  <p>Collaboration runs on a Yjs CRDT that the library owns internally. You bring the transport: Spindle ships an in-memory and a WebSocket provider, plus IndexedDB persistence so edits survive a refresh or going offline. Because sync payloads are opaque bytes, end-to-end encryption is a thin wrapping layer, not a rewrite.</p>
+<pre><code>npm install @b32nio/spindle-sheets-core @b32nio/spindle-sheets-react</code></pre>
+  <h2>Where it's going</h2>
+  <p>Spindle is the foundation for that encrypted drive, and for anyone else who wants office-grade editing without the lock-in. Help is very welcome, especially on performance, new features, and ports to other frontend frameworks.</p>
+</article>
+<aside class="aside panel"><dl>
+  <dt>Status</dt><dd>Live, open source</dd>
+  <dt>Licence</dt><dd>MIT</dd>
+  <dt>Stack</dt><dd>TypeScript, React, Canvas, Yjs</dd>
+  <dt>Try it</dt><dd><a href="https://spindle.b32n.io">spindle.b32n.io</a></dd>
+  <dt>Source</dt><dd><a href="https://github.com/b32n/spindle">b32n/spindle</a></dd>
+</dl></aside>
+</div></section>

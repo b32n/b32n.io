@@ -1,0 +1,41 @@
+title: Mindmaps case study
+description: Why Mindmaps exists and how it works. A memory you and your agents share, as cards and labelled links over MCP.
+path: /projects/mindmaps/
+section: projects
+---
+<section class="page-hero" data-swarm-host><canvas class="swarm" data-shapes="graph" data-count="700" aria-hidden="true"></canvas><div class="wrap">
+  <div class="crumbs"><a href="/#projects">Projects</a> / Mindmaps</div>
+  <h1>Mindmaps</h1>
+  <p class="lede">Memory for your agent. And for you. One brain that every harness you use reads and writes over MCP.</p>
+  <div class="facts"><span class="pill">MCP server</span><span class="pill">Claude Code · Codex · Cursor</span><span class="pill">Free to start</span></div>
+  <p class="ctas" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn primary" href="https://mindmaps.b32n.io" target="_blank" rel="noopener">Open Mindmaps <span class="arrow">↗</span></a></p>
+</div></section>
+<section style="padding-top:24px"><div class="wrap split">
+<article class="prose">
+  <h2>The problem</h2>
+  <p>Agents are good at working something out and bad at keeping it. A session traces four services, finds the race condition, and then the context window closes and takes all of it along.</p>
+  <p>The usual fix is to bolt on memory: embeddings in a vector database. The machine can query them, but you can't read them. When the agent remembers something wrong, there's nothing to open and nothing to fix.</p>
+  <blockquote>Memory you can't look at isn't yours.</blockquote>
+  <h2>What Mindmaps is</h2>
+  <p>Instead of a hidden index, memory gets a shape. Your agent writes cards and links over MCP. You open the board and see exactly what it knows, then drag, edit or throw things away until the map matches how you think about the problem.</p>
+  <ul>
+    <li><strong>You can see all of it.</strong> A card is one line until you click it. Then it's a full document with its own board underneath.</li>
+    <li><strong>Recall, not search.</strong> Results rank wording, meaning and the links between cards together, so the card next to the answer counts too.</li>
+    <li><strong>Links carry a verb.</strong> Blocks, supersedes, explains. The direction of the arrow is part of what you're saying.</li>
+    <li><strong>Old thinking sinks.</strong> Superseded cards drop down the results with a mark, but nothing gets deleted.</li>
+    <li><strong>Re-runs converge.</strong> Write the same thing twice with a stable key and the second write updates the first.</li>
+  </ul>
+  <h2>How it works</h2>
+  <p>Mindmaps is a remote MCP server. Every harness signs in to the same account, so what Claude Code learns at work, Codex on the laptop already knows. There's no API key to paste around:</p>
+<pre><code>claude mcp add --transport http mindmaps https://mindmaps.b32n.io/mcp</code></pre>
+  <p>Mindmaps runs no agents of its own. Your harness is the agent and bills to your own subscription; this side only stores, indexes and ranks. You can revoke any harness from settings without touching the others.</p>
+  <h2>Why it fits b32n</h2>
+  <p>It's the same belief as every other project here, applied to AI: what your tools know about your work should be something you can read, correct and keep.</p>
+</article>
+<aside class="aside panel"><dl>
+  <dt>Status</dt><dd>Live</dd>
+  <dt>Protocol</dt><dd>Model Context Protocol (HTTP)</dd>
+  <dt>Works with</dt><dd>Claude Code, Codex, Cursor, any MCP client</dd>
+  <dt>Try it</dt><dd><a href="https://mindmaps.b32n.io">mindmaps.b32n.io</a></dd>
+</dl></aside>
+</div></section>
