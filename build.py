@@ -5,11 +5,14 @@ Pages live in src/pages/*.html, posts in src/posts/*.html.
 Each source file starts with `key: value` lines, then a line `---`, then the HTML body.
 Run `python3 build.py` and deploy ./public.
 """
-import html, pathlib, re, datetime
+import html, pathlib, re, datetime, hashlib
 
 ROOT = pathlib.Path(__file__).parent
 SRC, OUT = ROOT / "src", ROOT / "public"
 SITE = "https://b32n.io"
+
+def ver(name):
+    return hashlib.sha1((OUT / "assets" / name).read_bytes()).hexdigest()[:8]
 
 def parse(path):
     raw = path.read_text()
@@ -44,7 +47,7 @@ def layout(title, body, *, desc, path, section="", og_type="website"):
 <link rel="alternate" type="application/rss+xml" title="b32n blog" href="/blog/feed.xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/site.css?v={ver('site.css')}">
 </head>
 <body>
 <header class="nav"><div class="wrap">
@@ -72,7 +75,7 @@ def layout(title, body, *, desc, path, section="", og_type="website"):
   </ul></div>
   <div class="fine"><span>© {year} Bharat Nadkarni · b32n</span><span>Built in the open · <a href="https://github.com/b32n/b32n.io">source</a></span></div>
 </div></footer>
-<script src="/assets/nano.js" defer></script>
+<script src="/assets/nano.js?v={ver('nano.js')}" defer></script>
 </body>
 </html>
 """
